@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Hello Riot.</title>
+</head>
+<body>
+<!-- place the custom tag anywhere inside the body -->
+
+<sample1></sample1>
+
+<sample2>
+    <h3>{ message }</h3>
+    <ul> <li each="{ techs }">{ name }</li> </ul>
+    <button onclick="{click}">Click</button>
+</sample2>
+
+<sample3 message="ddd"></sample3>
+
+<!-- include riot.js -->
+<script src="https://unpkg.com/riot@3.9.1/riot+compiler.js"></script>
+
+<!-- include the tag -->
+<script src="./sample-tag1.js"></script>
+<script src="./sample-tag2.js"></script>
+<script src="./sample-tag3.js"></script>
+
+<!-- mount the tag -->
+<script>
+    riot.mount('sample1');
+    riot.mount('sample2');
+    new SampleTag3(document.getElementsByTagName("sample3")[0])
+</script>
+</body>
+</html>
